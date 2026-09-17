@@ -1,0 +1,8 @@
+{
+  "block.machinometry.item_flow_meter": "Item Flow Meter",
+  "block.machinometry.fluid_flow_meter": "Fluid Flow Meter",
+  "block.machinometry.energy_flow_meter": "Energy Flow Meter",
+  "block.machinometry.inventory_gauge": "Inventory Gauge",
+  "block.machinometry.tank_gauge": "Tank Gauge",
+  "block.machinometry.energy_gauge": "Energy Gauge"
+}
