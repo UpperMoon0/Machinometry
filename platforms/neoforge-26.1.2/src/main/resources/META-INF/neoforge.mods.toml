@@ -1,0 +1,20 @@
+modLoader="javafml"
+loaderVersion="[4,)"
+license="All Rights Reserved"
+[[mods]]
+modId="machinometry"
+version="${file.jarVersion}"
+displayName="Machinometry"
+description='''Dedicated factory meters and gauges for item, fluid, and energy systems.'''
+[[dependencies.machinometry]]
+modId="neoforge"
+type="required"
+versionRange="[26.1.2.99,)"
+ordering="NONE"
+side="BOTH"
+[[dependencies.machinometry]]
+modId="minecraft"
+type="required"
+versionRange="[26.1.2,26.2)"
+ordering="NONE"
+side="BOTH"

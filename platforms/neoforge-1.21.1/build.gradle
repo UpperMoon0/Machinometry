@@ -1,0 +1,17 @@
+plugins { id 'java'; id 'net.neoforged.moddev' version '2.0.141' }
+group = 'com.nstut'; version = '0.1.0'
+base { archivesName = 'machinometry-neoforge-1.21.1' }
+java { toolchain.languageVersion = JavaLanguageVersion.of(21); withSourcesJar() }
+sourceSets {
+    main.java.srcDirs += ['../../shared/core/src/main/java']
+    main.resources.srcDirs += ['../../shared/resources']
+    test.java.srcDirs += ['../../shared/core/src/test/java']
+}
+neoForge {
+    version = '21.1.240'
+    runs { client { client() }; server { server() } }
+    mods { machinometry { sourceSet sourceSets.main } }
+}
+dependencies { testImplementation platform('org.junit:junit-bom:5.11.4'); testImplementation 'org.junit.jupiter:junit-jupiter' }
+tasks.named('test') { useJUnitPlatform() }
+tasks.withType(JavaCompile).configureEach { options.release = 21 }

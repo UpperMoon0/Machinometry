@@ -1,0 +1,12 @@
+{
+  "schemaVersion": 1,
+  "id": "machinometry",
+  "version": "${version}",
+  "name": "Machinometry",
+  "description": "Dedicated factory meters and gauges for item, fluid, and energy systems.",
+  "authors": ["UpperMoon0"],
+  "license": "ARR",
+  "environment": "*",
+  "entrypoints": { "main": ["com.nstut.machinometry.fabric.MachinometryFabric"] },
+  "depends": { "fabricloader": ">=0.19.3", "fabric-api": ">=0.155.2+26.1.2", "team_reborn_energy": ">=5.0.0", "minecraft": "26.1.2", "java": ">=25" }
+}

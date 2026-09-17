@@ -1,0 +1,21 @@
+plugins { id 'java'; id 'net.minecraftforge.gradle' version '[6.0,6.2)' }
+group = 'com.nstut'; version = '0.1.0'
+base { archivesName = 'machinometry-forge-1.20.1' }
+java { toolchain.languageVersion = JavaLanguageVersion.of(17); withSourcesJar() }
+sourceSets {
+    main.java.srcDirs += ['../../shared/core/src/main/java']
+    main.resources.srcDirs += ['../../shared/resources']
+    test.java.srcDirs += ['../../shared/core/src/test/java']
+}
+minecraft {
+    mappings channel: 'official', version: '1.20.1'
+    runs { client { workingDirectory project.file('run'); mods { machinometry { source sourceSets.main } } }; server { workingDirectory project.file('run'); mods { machinometry { source sourceSets.main } } } }
+}
+repositories { mavenCentral() }
+dependencies {
+    minecraft 'net.minecraftforge:forge:1.20.1-47.3.12'
+    testImplementation platform('org.junit:junit-bom:5.11.4')
+    testImplementation 'org.junit.jupiter:junit-jupiter'
+}
+tasks.named('test') { useJUnitPlatform() }
+tasks.withType(JavaCompile).configureEach { options.release = 17 }
